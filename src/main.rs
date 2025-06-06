@@ -296,7 +296,7 @@ async fn game_data_fetcher(sender: mpsc::UnboundedSender<GameInfo>) -> Result<()
             }
         }
 
-        tokio::time::sleep(tokio::time::Duration::from_millis(1000)).await;
+        tokio::time::sleep(tokio::time::Duration::from_millis(800)).await;
     }
 
     Ok(())

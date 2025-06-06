@@ -4,10 +4,13 @@ version = "0.1.0"
 edition = "2024"
 
 [profile.release]
-strip = true
+opt-level = "z"             # optimize for size
+strip = true                # strip symbols to reduce size
+lto = true                  # link-time optimization
+codegen-units = 1           # better performance
 
 [features]
-default = ["res_2560"]
+default = ["res_2560"] # Current method is just swap res you need with this to make different executables.
 res_1920 = []
 res_2560 = []
 

@@ -56,6 +56,7 @@ A real-time overlay application for League of Legends that displays your champio
    ```
 
 2. **Build the project**
+   #### Manually change .toml default res_ for the res you want. Ill fix this when it is not 2 am
    ```bash
    cargo build --release
    ```
