@@ -104,6 +104,7 @@ impl OverlayApp {
 
 impl eframe::App for OverlayApp {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
+        ctx.send_viewport_cmd(egui::ViewportCommand::MousePassthrough(true));
         // Initialize text styles once
         if !self.styles_initialized {
             ctx.style_mut(|style| {
@@ -368,7 +369,9 @@ impl eframe::App for OverlayApp {
                                                         (
                                                             "Lethality:",
                                                             "",
-                                                            if stats.lethality == 0.0 && stats.armor_pen == 1.0 {
+                                                            if stats.physical_lethality== 0.0 && stats.armor_pen == 1.0 {
+                                                                "LDR Zaddy?".to_string()
+                                                            } else if stats.lethality == 0.0 && stats.armor_pen == 1.0 {
                                                                 "LDR Zaddy?".to_string() // eventually make this item to buy. to_strin()?
                                                             } else {
                                                                 format!(
@@ -577,7 +580,6 @@ async fn main() -> Result<()> {
             .with_position(egui::pos2(SCREEN_WIDTH - 360.0 * horizontal_scale, 55.0))
             .with_decorations(false)
             .with_fullsize_content_view(true)
-            .with_mouse_passthrough(true)
             .with_transparent(true)
             .with_always_on_top(),
         ..Default::default()
