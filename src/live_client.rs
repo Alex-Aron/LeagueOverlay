@@ -1,4 +1,4 @@
-use crate::game_info::{GameData};
+use crate::game_info::GameData;
 use anyhow::Result;
 use reqwest::{Client, ClientBuilder};
 use serde::Deserialize;
@@ -84,5 +84,13 @@ impl LoLLiveClient {
     #[allow(dead_code)]
     pub async fn get_player_scores(&self) -> Result<serde_json::Value> {
         self.make_request("/playerscores").await
+    }
+
+    pub async fn get_active_player(&self) -> Result<serde_json::Value> {
+        self.make_request("/activeplayer").await
+    }
+
+    pub async fn get_all_players(&self) -> Result<serde_json::Value> {
+        self.make_request("/playerlist").await
     }
 }
