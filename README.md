@@ -1,11 +1,11 @@
 # League of Legends Overlay
-A real-time overlay application for League of Legends that displays your champion's stats and game information in a sleek, transparent window.
+A real-time overlay application for League of Legends that displays your champion's stats and game information in a window.
 
 ## Features
 
 - **Real-time Stats Display**: Shows live champion statistics including Attack Damage, Ability Power, Armor, Magic Resist, and more
 - **Transparent Overlay**: Non-intrusive overlay that sits on top of your game
-- **Player Information**: Displays your summoner name and personalized "Do Not Tilt" message
+- **Player Information**: Displays your summoner name and personalized "Do Not Tilt" message 
 - **Two-Column Layout**: Organized display with basic stats on the left and advanced stats on the right
 - **Death Timer**: Shows respawn countdown when dead
 - **CS/Min Tracking**: Real-time creep score per minute calculation
