@@ -1,7 +1,8 @@
+#![windows_subsystem = "windows"]
+
 use anyhow::Result;
 use eframe::egui;
 use egui::{Color32, Frame, ViewportCommand};
-
 use std::sync::{Arc, Mutex};
 use tokio::sync::mpsc;
 mod data;
