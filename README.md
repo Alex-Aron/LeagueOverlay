@@ -1,5 +1,6 @@
 # League of Legends Overlay
 A real-time overlay application for League of Legends that displays your champion's stats and game information in a window.
+![image](https://github.com/user-attachments/assets/319ce984-d2d6-4398-8ed4-20d69d225c6b)
 
 ## Features
 
