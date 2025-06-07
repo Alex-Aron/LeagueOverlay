@@ -3,15 +3,26 @@ name = "league_overlay"
 version = "0.1.0"
 edition = "2024"
 
+# Binary targets for different resolutions
+[[bin]]
+name = "league_overlay_1920"
+path = "src/main.rs"
+required-features = ["res_1920"]
+
+[[bin]]
+name = "league_overlay_2560"
+path = "src/main.rs"
+required-features = ["res_2560"]
+
 [profile.release]
-opt-level = 3
+opt-level = "s"
 debug = false
 split-debuginfo = '...'  # Platform-specific.
 strip = true
 debug-assertions = false
 overflow-checks = false
-lto = true
-panic = 'abort'
+lto = "fat"
+panic = "abort"
 incremental = false
 codegen-units = 1
 rpath = false
@@ -28,7 +39,7 @@ opt-level = 3
 opt-level = 3
 
 [features]
-default = ["res_2560"] # Current method is just swap res you need with this to make different executables.
+default = []
 res_1920 = []
 res_2560 = []
 
@@ -48,6 +59,7 @@ windows = { version = "0.56.0", features = [
 ] }
 raw-window-handle = "0.6.2"
 global-hotkey = "0.6"
+png = "0.17.16"
 
 [package.metadata.windows]
 subsystem = "windows"

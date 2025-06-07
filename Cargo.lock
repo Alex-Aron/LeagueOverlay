@@ -1796,6 +1796,7 @@ dependencies = [
  "eframe",
  "egui",
  "global-hotkey",
+ "png",
  "raw-window-handle",
  "reqwest",
  "serde",
